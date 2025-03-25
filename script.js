@@ -146,8 +146,23 @@ function updateCorrectGuess(guessedLetter) {
 
 //restart game
 function restartGame() {
+	// Hide Game Area, show Difficulty Selection
+	document.getElementById("gameArea").classList.remove("d-block");
 	document.getElementById("gameArea").classList.add("d-none");
+
+	document.getElementById("difficultyBox").classList.remove("d-block");
+	document.getElementById("difficultyBox").classList.add("d-none");
+
 	document.getElementById("difficultySelection").classList.remove("d-none");
+
+	// Reset shamrock image
+	// document.getElementById("shamrock").src = "img/image6.jpg";
+
+	// Clear wrong letters
+	document.getElementById("wrongLetters").textContent = "Wrong Guesses: ";
+
+	// Clear input
+	document.getElementById("letterInput").value = "";
 }
 
 // End Game Function
@@ -161,3 +176,12 @@ function endGame(isWin) {
 	// Show restart button
 	document.getElementById("restartBtn").classList.remove("d-none");
 }
+
+// Event Listener for Enter Key
+document
+	.getElementById("letterInput")
+	.addEventListener("keyup", function (event) {
+		if (event.key === "Enter") {
+			guessLetter();
+		}
+	});
