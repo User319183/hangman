@@ -1,11 +1,6 @@
 
 const defaultConfig = {
-    sound: {
-        enabled: true,
-        volume: 0.5,
-        correctSound: true,
-        wrongSound: true
-    },
+    
     rain: {
         enabled: true,
         density: 150,
@@ -43,11 +38,7 @@ function applyConfig() {
         window.rainEffect.setOptions(gameConfig.rain);
     }
 
-    // If sound system is enabled, apply sound settings
-    if (window.soundSystem) {
-        window.soundSystem.setVolume(gameConfig.sound.volume);
-        window.soundSystem.setEnabled(gameConfig.sound.enabled);
-    }
+    
 
     // Apply theme
     document.body.classList.toggle('dark-mode', gameConfig.theme.darkMode);

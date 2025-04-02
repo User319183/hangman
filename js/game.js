@@ -28,11 +28,24 @@ const gameModule = {
     },
 
     getRandomWord(level) {
+        if (this.wordList.length === 0) {
+            this.wordList = [
+                "gold", "luck", "clover", "rain", "charm", "parade",
+                "leprechaun", "treasure", "celebration", "greenery",
+                "shenanigans", "tradition"
+            ];
+        }
+        
         let filteredWords = this.wordList.filter(word => {
             if (level === "easy") return word.length <= 4;
             if (level === "medium") return word.length >= 5 && word.length <= 7;
             if (level === "hard") return word.length >= 8;
         });
+
+        if (filteredWords.length === 0) {
+            filteredWords = this.wordList;
+        }
+
         return filteredWords[Math.floor(Math.random() * filteredWords.length)];
     },
 
@@ -63,10 +76,8 @@ const gameModule = {
         this.state.guessedLetters.push(guessedLetter);
 
         if (this.state.selectedWord.includes(guessedLetter)) {
-            if (gameConfig.sound.enabled) generateSound('correct');
             this.updateCorrectGuess(guessedLetter);
         } else {
-            if (gameConfig.sound.enabled) generateSound('wrong');
             this.updateWrongGuess(guessedLetter);
         }
     },

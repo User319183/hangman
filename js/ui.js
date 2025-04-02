@@ -14,13 +14,30 @@ const uiModule = {
     },
 
     showGameArea() {
-        document.getElementById("gameArea").classList.remove("d-none");
-        document.getElementById("gameArea").classList.add("d-block");
-        document.getElementById("difficultyBox").classList.remove("d-none");
-        document.getElementById("difficultyBox").classList.add("d-block");
-        document.getElementById("difficultySelection").classList.add("d-none");
-        document.getElementById("gameMessage").classList.add("d-none");
-        document.getElementById("letterInput").focus();
+        const difficultySelection = document.getElementById("difficultySelection");
+        const gameArea = document.getElementById("gameArea");
+        const difficultyBox = document.getElementById("difficultyBox");
+        const gameMessage = document.getElementById("gameMessage");
+
+        difficultySelection.classList.add("fade-exit");
+        setTimeout(() => {
+            difficultySelection.classList.add("d-none");
+            
+            gameArea.classList.remove("d-none");
+            difficultyBox.classList.remove("d-none");
+            gameMessage.classList.add("d-none");
+            
+            requestAnimationFrame(() => {
+                gameArea.classList.add("d-block", "fade-enter");
+                difficultyBox.classList.add("d-block", "fade-enter");
+                
+                requestAnimationFrame(() => {
+                    gameArea.classList.add("fade-enter-active");
+                    difficultyBox.classList.add("fade-enter-active");
+                    document.getElementById("letterInput").focus();
+                });
+            });
+        }, 300);
     },
 
     showGameMessage(message, type) {
