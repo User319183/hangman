@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
 
@@ -52,6 +51,11 @@
 
                 <div id="gameMessage" class="game-message d-none"></div>
 
+                <div id="wordGraveyard" class="word-graveyard d-none">
+                    <h3>Word Graveyard</h3>
+                    <div id="wordList" class="word-list"></div>
+                </div>
+
                 <div class="restart-section">
                     <button id="restartBtn" class="restart-button" onclick="restartGame()">Restart Game</button>
                 </div>
@@ -84,8 +88,8 @@
 
     <button class="settings-btn" data-bs-toggle="modal" data-bs-target="#settingsModal">
         <svg width="24" height="24" viewBox="0 0 24 24">
-            <path fill="currentColor" 
-                d="M10.3 4.4c.8-.1 1.6-.1 2.4 0l1.2 2.9 2.7-1.2c.7.5 1.3 1 1.7 1.7l-1.2 2.7 2.9 1.2c.1.8.1 1.6 0 2.4l-2.9 1.2 1.2 2.7c-.5.7-1 1.3-1.7 1.7l-2.7-1.2-1.2 2.9c-.8.1-1.6.1-2.4 0l-1.2-2.9-2.7 1.2c-.7-.5-1.3-1-1.7-1.7l1.2-2.7-2.9-1.2c-.1-.8-.1-1.6 0-2.4l2.9-1.2-1.2-2.7c.5-.7 1-1.3 1.7-1.7l2.7 1.2 1.2-2.9z"/>
+            <path fill="currentColor"
+                d="M10.3 4.4c.8-.1 1.6-.1 2.4 0l1.2 2.9 2.7-1.2c.7.5 1.3 1 1.7 1.7l-1.2 2.7 2.9 1.2c.1.8.1 1.6 0 2.4l-2.9 1.2 1.2 2.7c-.5.7-1 1.3-1.7 1.7l-2.7-1.2-1.2 2.9c-.8.1-1.6.1-2.4 0l-1.2-2.9-2.7 1.2c-.7-.5-1.3-1-1.7-1.7l1.2-2.7-2.9-1.2c-.1-.8-.1-1.6 0-2.4l2.9-1.2-1.2-2.7c.5-.7 1-1.3 1.7-1.7l2.7 1.2 1.2-2.9z" />
         </svg>
     </button>
 

@@ -328,6 +328,30 @@ body {
     transform: scale(1.1);
 }
 
+.word-graveyard {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    margin: 2rem auto;
+    max-width: 600px;
+    text-align: center;
+}
+
+.word-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.word-list span {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-size: 0.9rem;
+}
+
 .modal-content {
     border: 1px solid rgba(255, 255, 255, 0.1);
 }

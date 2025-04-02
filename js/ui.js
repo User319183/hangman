@@ -54,6 +54,16 @@ const uiModule = {
         document.getElementById("restartBtn").classList.remove("d-none");
     },
 
+    updateWordGraveyard(graveyard) {
+        const graveyardElement = document.getElementById("wordGraveyard");
+        const wordList = document.getElementById("wordList");
+        
+        graveyardElement.classList.remove("d-none");
+        wordList.innerHTML = graveyard.map(entry => 
+            `<span style="color: ${entry.won ? '#4CAF50' : '#e74c3c'}">${entry.word}</span>`
+        ).join('');
+    },
+
     resetUI() {
         document.getElementById("gameArea").classList.remove("d-block");
         document.getElementById("gameArea").classList.add("d-none");

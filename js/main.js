@@ -36,5 +36,8 @@ function initializeGameListeners() {
     });
 
     window.startGame = async (level) => await gameModule.startGame(level);
-    window.restartGame = () => uiModule.resetUI();
+    window.restartGame = () => {
+        gameModule.resetState();
+        uiModule.resetUI();
+    };
 }

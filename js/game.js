@@ -23,7 +23,8 @@ const gameModule = {
         displayedWord: "",
         wrongGuesses: 0,
         guessedLetters: [],
-        maxMistakes: 6
+        maxMistakes: 6,
+        wordGraveyard: []
     },
 
     getRandomWord(level) {
@@ -109,8 +110,21 @@ const gameModule = {
         const message = isWin
             ? `Congratulations! You've found the word: ${this.state.selectedWord}`
             : `Game Over! The word was: ${this.state.selectedWord}`;
+        this.state.wordGraveyard.push({
+            word: this.state.selectedWord,
+            won: isWin
+        });
         uiModule.showGameMessage(message, isWin ? "success" : "danger");
+        uiModule.updateWordGraveyard(this.state.wordGraveyard);
         uiModule.showRestartButton();
+    },
+
+    resetState() {
+        this.state.selectedWord = "";
+        this.state.displayedWord = "";
+        this.state.wrongGuesses = 0;
+        this.state.guessedLetters = [];
+        // We can't reset 'wordGraveyard' as it must stay for history
     }
 };
 
