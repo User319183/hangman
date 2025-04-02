@@ -1,4 +1,3 @@
-
 import gameModule from './game.js';
 import uiModule from './ui.js';
 

@@ -1,4 +1,5 @@
 // why did i overcomplicate my life
+
 class RainDrop {
     constructor(canvas) {
         this.canvas = canvas;

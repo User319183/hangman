@@ -1,6 +1,4 @@
-
 const defaultConfig = {
-    
     rain: {
         enabled: true,
         density: 150,
@@ -37,8 +35,6 @@ function applyConfig() {
     if (window.rainEffect) {
         window.rainEffect.setOptions(gameConfig.rain);
     }
-
-    
 
     // Apply theme
     document.body.classList.toggle('dark-mode', gameConfig.theme.darkMode);

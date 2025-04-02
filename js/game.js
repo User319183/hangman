@@ -1,4 +1,3 @@
-
 import uiModule from './ui.js';
 
 const gameModule = {

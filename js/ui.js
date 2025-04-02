@@ -1,4 +1,3 @@
-
 const uiModule = {
     updateDifficultyDisplay(level) {
         let difficultyBox = document.getElementById("difficultyBox");
