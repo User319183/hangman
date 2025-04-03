@@ -86,6 +86,11 @@ const gameModule = {
         this.state.wrongGuesses++;
         uiModule.updateWrongLetters(guessedLetter);
         document.getElementById("shamrock").src = generateHealthImage(6 - this.state.wrongGuesses);
+        if (gameConfig.sound.enabled) {
+            const wrongSound = new Audio('Wrong.mp3');
+            wrongSound.volume = gameConfig.sound.volume;
+            wrongSound.play();
+        }
 
         if (this.state.wrongGuesses === this.state.maxMistakes) {
             this.endGame(false);
@@ -97,6 +102,11 @@ const gameModule = {
         for (let i = 0; i < this.state.selectedWord.length; i++) {
             newDisplayedWord += this.state.selectedWord[i] === guessedLetter ? 
                 guessedLetter : this.state.displayedWord[i];
+        }
+        if (gameConfig.sound.enabled) {
+            const correctSound = new Audio('Correct.mp3');
+            correctSound.volume = gameConfig.sound.volume;
+            correctSound.play();
         }
         this.state.displayedWord = newDisplayedWord;
         uiModule.updateUI(this.state);

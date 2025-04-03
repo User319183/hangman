@@ -8,6 +8,10 @@ const defaultConfig = {
     theme: {
         darkMode: true,
         rainColor: '#aec2e0'
+    },
+    sound: {
+        enabled: true,
+        volume: 0.5
     }
 };
 

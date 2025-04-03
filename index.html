@@ -81,6 +81,15 @@
                         <label for="rainDensity" class="form-label">Rain Density</label>
                         <input type="range" class="form-range" id="rainDensity" min="50" max="300" step="10">
                     </div>
+                    <div class="mb-3">
+                        <h6>Sound Effects</h6>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="soundEnabled">
+                            <label class="form-check-label" for="soundEnabled">Enable Sounds</label>
+                        </div>
+                        <label for="soundVolume" class="form-label">Volume</label>
+                        <input type="range" class="form-range" id="soundVolume" min="0" max="100" step="1">
+                    </div>
                 </div>
             </div>
         </div>
@@ -98,6 +107,14 @@
     <script src="canvas_utils.js"></script>
     <script src="rain_effect.js"></script>
     <script type="module" src="js/main.js"></script>
+    <script>
+        // Ensure startGame is available globally
+        window.startGame = async (level) => {
+            if (window.gameModule) {
+                await window.gameModule.startGame(level);
+            }
+        };
+    </script>
     <script>
         window.addEventListener('load', initRain);
     </script>
